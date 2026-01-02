@@ -1,0 +1,221 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #e8e4df;
+    --text-dark: #2d2d2d;
+    --text-light: #5a5a5a;
+    --accent-color: #c45c4a;
+    --card-bg: #f5f3f0;
+    --border-color: #3d3d3d;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* Navigation */
+.navbar {
+    padding: 40px 80px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px 80px 60px;
+}
+
+.hero-card {
+    display: flex;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    max-width: 1200px;
+    width: 100%;
+    min-height: 500px;
+}
+
+.hero-content {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.hero-role {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+}
+
+.social-section {
+    margin-top: auto;
+}
+
+.social-handle {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--text-dark);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.social-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Hero Image */
+.hero-image {
+    flex: 1.2;
+    position: relative;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-accent {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.hero-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .nav-menu {
+        gap: 60px;
+    }
+    
+    .hero-card {
+        flex-direction: column;
+    }
+    
+    .hero-name {
+        font-size: 56px;
+    }
+    
+    .hero-image {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 30px 40px;
+    }
+    
+    .nav-menu {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-section {
+        padding: 20px 40px 40px;
+    }
+    
+    .hero-content {
+        padding: 40px;
+    }
+    
+    .hero-name {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 20px;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+    }
+    
+    .nav-menu a {
+        font-size: 12px;
+    }
+    
+    .hero-section {
+        padding: 10px 20px 30px;
+    }
+    
+    .hero-content {
+        padding: 30px;
+    }
+    
+    .hero-name {
+        font-size: 36px;
+    }
+    
+    .hero-role {
+        font-size: 18px;
+    }
+}

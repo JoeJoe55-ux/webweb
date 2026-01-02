@@ -1,0 +1,210 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #e8e4df;
+    --text-dark: #2d2d2d;
+    --text-light: #5a5a5a;
+    --accent-color: #c45c4a;
+    --card-bg: #f5f3f0;
+    --border-color: #3d3d3d;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* Navigation */
+.navbar {
+    padding: 40px 80px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--accent-color);
+}
+
+/* Art Section */
+.art-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px 80px 60px;
+}
+
+.art-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    max-width: 1200px;
+    width: 100%;
+    padding: 60px;
+}
+
+.art-header {
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Art Gallery */
+.art-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+.art-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.art-item:hover {
+    transform: scale(1.02);
+}
+
+.art-item:hover .art-image {
+    background-color: #c5c1bc;
+}
+
+.art-item-large {
+    grid-row: span 2;
+}
+
+.art-item-wide {
+    grid-column: span 2;
+}
+
+.art-image {
+    width: 100%;
+    height: 100%;
+    background-color: #d5d1cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .nav-menu {
+        gap: 60px;
+    }
+    
+    .art-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .art-item-large {
+        grid-row: span 1;
+    }
+    
+    .art-item-wide {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 30px 40px;
+    }
+    
+    .nav-menu {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .art-section {
+        padding: 20px 40px 40px;
+    }
+    
+    .art-card {
+        padding: 40px;
+    }
+    
+    .page-title {
+        font-size: 36px;
+    }
+    
+    .art-gallery {
+        grid-auto-rows: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 20px;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+    }
+    
+    .nav-menu a {
+        font-size: 12px;
+    }
+    
+    .art-section {
+        padding: 10px 20px 30px;
+    }
+    
+    .art-card {
+        padding: 30px;
+    }
+    
+    .page-title {
+        font-size: 28px;
+    }
+    
+    .art-gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 180px;
+        gap: 16px;
+    }
+}
